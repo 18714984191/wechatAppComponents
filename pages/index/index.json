@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "multiple-picker": "../../components/multiple-picker/index",
+    "multiple-area-picker": "../../components/multiple-area-picker/index"
+  }
+}

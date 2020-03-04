@@ -1,0 +1,117 @@
+/* components/multiple-column-selection/index.wxss */
+@import "ripples.wxss";
+
+.picker-contain {
+  width: 750rpx;
+  height: 100vh;
+  background-color: rgba(102, 102, 102, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
+}
+
+.picker-modal {
+  width: 750rpx;
+  height: 825rpx;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.picker-title-box {
+  width: 100%;
+  height: 172rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* border-bottom: solid 2rpx #efefef; */
+}
+
+.picker-title-box-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 30%;
+}
+
+.box-item-text.green {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #598eee;
+  height: 40rpx;
+}
+
+.box-item-select-text.green {
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #598eee;
+  margin-top: 20rpx;
+  height: 40rpx;
+}
+
+.box-item-text {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #282828;
+  height: 40rpx;
+}
+
+.box-item-select-text {
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #666;
+  margin-top: 20rpx;
+  height: 40rpx;
+}
+
+.picker-content {
+  width: 100%;
+  height: 500rpx;
+}
+
+.picker-box {
+  width: 100%;
+  height: 130rpx;
+  font-size: 40rpx;
+}
+
+picker-view-column {
+  text-align: center;
+  line-height: 130rpx;
+}
+
+.next-button {
+  width: 696rpx;
+  height: 91rpx;
+  background-color: #edf3ff;
+  border-radius: 15rpx;
+  font-size: 30rpx;
+  color: #598eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.next-button.gray {
+  width: 696rpx;
+  height: 91rpx;
+  background-color: #eee;
+  border-radius: 15rpx;
+  font-size: 30rpx;
+  color: rgba(102, 102, 102, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 弹出效果 */
+.picker-modal.false{transform:translateY(100%);-webkit-transform:translateY(100%);transition: all .3s cubic-bezier(0,.54,.51,.99);-webikit-transition: all .3s cubic-bezier(0,.54,.51,.99);opacity: 1;}
+.picker-modal.true{transform:translateY(0%);-webkit-transform:translateY(0%);transition: all .3s cubic-bezier(0,.54,.51,.99);-webikit-transition: all .3s cubic-bezier(0,.54,.51,.99);opacity: 1;}

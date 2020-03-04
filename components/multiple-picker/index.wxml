@@ -1,0 +1,64 @@
+<block wx:if="{{show}}">
+  <view class="picker-contain" bindtap="closeModal"></view>
+  <view class="picker-modal ripple {{animateClass}}">
+    <view class="picker-title-box">
+      <view class="picker-title-box-item" data-index="0" bindtap="changeTab">
+        <view class="{{itemTitleClass0}}">经验要求</view>
+        <view class="{{itemSelectedClass0}}">{{experienceValue}}</view>
+      </view>
+
+      <view class="picker-title-box-item" data-index="1" bindtap="changeTab">
+        <view class="{{itemTitleClass1}}">学历要求</view>
+        <view class="{{itemSelectedClass1}}">{{educationValue}}</view>
+      </view>
+
+      <view class="picker-title-box-item" data-index="2" bindtap="changeTab">
+        <view class="{{itemTitleClass2}}">职位月薪</view>
+        <view class="{{itemSelectedClass2}}">{{salaryValue}}</view>
+      </view>
+    </view>
+
+    <block wx:if="{{tabIndex==0}}">
+      <view class="picker-content">
+        <picker-view indicator-class="picker-box" style="height:450rpx;width:100%" value="{{experienceIndex}}" bindchange="experienceChange">
+          <picker-view-column>
+            <view wx:for="{{currentPickerData}}" wx:key="currentPickerData">{{item}}</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+    </block>
+
+    <block wx:if="{{tabIndex==1}}">
+      <view class="picker-content">
+        <picker-view indicator-class="picker-box" style="height:450rpx;width:100%" value="{{educationIndex}}" bindchange="educationChange">
+          <picker-view-column>
+            <view wx:for="{{currentPickerData}}" wx:key="currentPickerData">{{item}}</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+    </block>
+
+    <block wx:if="{{tabIndex==2}}">
+      <view class="picker-content">
+        <picker-view indicator-class="picker-box" style="height:450rpx;width:100%" value="{{salaryIndex}}" bindchange="salaryChange">
+          <picker-view-column>
+            <view wx:for="{{currentPickerData}}" wx:key="currentPickerData">{{item}}</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+    </block>
+
+    <block wx:if="{{tabIndex!=2}}">
+      <view class="next-button" bindtap="nextStep">下一步</view>
+    </block>
+
+    <block wx:if="{{submit&&tabIndex==2}}">
+      <view class="next-button" bindtap="submit">完成</view>
+    </block>
+
+    <block wx:if="{{!submit&&tabIndex==2}}">
+      <view class="next-button gray">完成</view>
+    </block>
+
+  </view>
+</block>

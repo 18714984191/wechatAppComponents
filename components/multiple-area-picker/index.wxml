@@ -1,0 +1,36 @@
+<block wx:if="{{show}}">
+  <view class="picker-contain"></view>
+  <view class="picker-modal ripple {{animateClass}}">
+    <view class="picker-title-box">
+      <view class="handle-button" style="color:#999999" bindtap="closeModal">取消</view>
+      <view class="handle-button" style="color:#598eee" bindtap="submit">确定</view>
+    </view>
+
+    <view class="picker-content">
+      <picker-view indicator-class="picker-box" style="height:450rpx;width:25%" value="{{provinceIndex}}" bindchange="provinceChange">
+        <picker-view-column>
+          <view wx:for="{{provinceData}}" wx:key="provinceData">{{item}}</view>
+        </picker-view-column>
+      </picker-view>
+
+      <picker-view indicator-class="picker-box" style="height:450rpx;width:25%" value="{{cityIndex}}" bindchange="cityChange">
+        <picker-view-column>
+          <view wx:for="{{cityData}}" wx:key="cityData">{{item}}</view>
+        </picker-view-column>
+      </picker-view>
+
+      <picker-view indicator-class="picker-box" style="height:450rpx;width:25%" value="{{countyIndex}}" bindchange="countyChange">
+        <picker-view-column>
+          <view wx:for="{{countyData}}" wx:key="countyData">{{item}}</view>
+        </picker-view-column>
+      </picker-view>
+
+      <picker-view indicator-class="picker-box" style="height:450rpx;width:25%" value="{{townIndex}}" bindchange="townChange">
+        <picker-view-column>
+          <view wx:for="{{townData}}" wx:key="townData">{{item}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+
+  </view>
+</block>

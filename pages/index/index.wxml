@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+  <view bindtap="showJobRequirements">岗位要求选择</view>
+  <multiple-picker bind:selectComplete="selectComplete" show="{{jobRequirements}}" experienceData="{{experienceData}}" educationData="{{educationData}}" salaryData="{{salaryData}}"></multiple-picker>
+
+  <view bindtap="showAreaSelect" style="margin-top:100rpx">四级地区选择</view>
+  <block wx:if="{{pcasData}}">
+    <multiple-area-picker bind:areaSelect="areaSelect" show="{{areaShow}}" pcasData="{{pcasData}}" />
+  </block>
+</view>
